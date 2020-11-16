@@ -29,7 +29,7 @@ export default () => (
       <h2 className="profile__head">Profile</h2>
       <div className="profile__inner">
         <div className="profile__face_wrap">
-          <img src="./images/face.png" srcSet="./images/face@2x.png 2x" className="profile__face" />
+          <img src="/images/face.png" srcSet="/images/face@2x.png 2x" className="profile__face" />
           <h3 className="profile__name">吉田　栄治<small>Eiji Yoshida</small></h3>
         </div>
         <dl className="profile__history">
@@ -83,12 +83,12 @@ export default () => (
           <div className="works_info">
             <ul className="works_info__list">
               <li>
-                <img src="./images/ci.png" srcSet="./images/ci@2x.png 2x" className="works__image--ci" />
+                <img src="/images/ci.png" srcSet="/images/ci@2x.png 2x" className="works__image--ci" />
                 <h4 className="works_info__title">CAREER INDEX</h4>
                 <p className="works_info__text"><a href="https://careerindex.jp" target="_blank">https://careerindex.jp</a><br />サイトデザイン、フロントエンド実装</p>
               </li>
               <li>
-                <img src="./images/lacotto.png" srcSet="./images/lacotto@2x.png 2x" className="works__image--lacotto" />
+                <img src="/images/lacotto.png" srcSet="/images/lacotto@2x.png 2x" className="works__image--lacotto" />
                 <h4 className="works_info__title">Lacotto</h4>
                 <p className="works_info__text"><a href="https://lacotto.jp/" target="_blank">https://lacotto.jp</a><br />サイトデザイン、フロントエンド実装</p>
               </li>
@@ -134,12 +134,12 @@ export default () => (
           <div className="works_info">
             <ul className="works_info__list">
               <li>
-                <img src="./images/museco_pc.png" srcSet="./images/museco_pc@2x.png 2x" className="works__image--mc_pc" />
+                <img src="/images/museco_pc.png" srcSet="/images/museco_pc@2x.png 2x" className="works__image--mc_pc" />
                 <h4 className="works_info__title">MUSE &amp; Co.</h4>
                 <p className="works_info__text"><a href="https://museco.jp" target="_blank">https://museco.jp</a><br />サイトデザイン、フロントエンド・サーバーサイド実装</p>
               </li>
               <li>
-                <img src="./images/museco_sp.png" srcSet="./images/museco_sp@2x.png 2x" className="works__image--mc_sp" />
+                <img src="/images/museco_sp.png" srcSet="/images/museco_sp@2x.png 2x" className="works__image--mc_sp" />
                 <h4 className="works_info__title">MUSE &amp; Co.アプリ<br />iOS/Android</h4>
                 <p className="works_info__text">デザイン</p>
               </li>
@@ -180,12 +180,12 @@ export default () => (
           <div className="works_info">
             <ul className="works_info__list">
               <li>
-                <img src="./images/myuu.png" srcSet="./images/myuu@2x.png 2x" className="works__image--myuu" />
+                <img src="/images/myuu.png" srcSet="/images/myuu@2x.png 2x" className="works__image--myuu" />
                 <h4 className="works_info__title">Myuu</h4>
                 <p className="works_info__text"><a href="http://myuu.jp" target="_blank">http://myuu.jp</a><br />企画、デザイン、コーディング、WordPress 組込<br />キュレーションメディアの立ち上げに参加。開発全行程をほぼ一人で担当。</p>
               </li>
               <li>
-                <img src="./images/visits.png" srcSet="./images/visits@2x.png 2x" className="works__image--visits" />
+                <img src="/images/visits.png" srcSet="/images/visits@2x.png 2x" className="works__image--visits" />
                 <h4 className="works_info__title">VISITS</h4>
                 <p className="works_info__text"><a href="http://visits.world" target="_blank">http://visits.world</a><br />コーディング、WordPress 組込<br />投稿機能、レスポンシブデザインなど高機能なサイトながら2週間ほどでリリースのスピード案件。</p>
               </li>
