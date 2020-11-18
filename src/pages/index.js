@@ -1,6 +1,8 @@
 import React from "react"
+import { graphql } from "gatsby"
+import Img from "gatsby-image"
 
-export default () => (
+export default ({ data }) => (
   <div>
     {/* Global site tag (gtag.js) - Google Analytics */}
     <meta charSet="utf-8" />
@@ -9,8 +11,6 @@ export default () => (
     <link href="./style.css" rel="stylesheet" />
     <header className="header">
       <p className="header__title"><a href="/"><strong>Portfolio</strong> Eiji Yoshida</a></p>
-    </header>
-    <section className="top">
       <nav className="menu">
         <div className="menu__bars"><i className="fas fa-bars" id="menu__bars" /></div>
         <ul className="menu__list" id="menu__list">
@@ -19,6 +19,9 @@ export default () => (
           <li><a href="#contact"><i className="fas fa-envelope" />Contact</a></li>
         </ul>
       </nav>
+    </header>
+    <section className="top">
+      <Img className="top_image" fluid={data.file.childImageSharp.fluid} alt="" />
       <div className="title">
         <h1 className="title__title">Portfolio</h1>
         <p className="title__name">Eiji Yoshida<br />2020</p>
@@ -223,3 +226,15 @@ export default () => (
     </footer>
   </div>
 )
+
+export const query = graphql`
+  query {
+    file(relativePath: {eq: "top.jpg"}) {
+      childImageSharp {
+        fluid(maxWidth: 1600) {
+          ...GatsbyImageSharpFluid_withWebp_tracedSVG
+        }
+      }
+    }
+  }
+`
