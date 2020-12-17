@@ -21,7 +21,7 @@ export default ({ data }) => (
       </nav>
     </header>
     <section className="top">
-      <Img className="top_image" fluid={data.file.childImageSharp.fluid} alt="" />
+      <Img className="top_image" fluid={data.top.childImageSharp.fluid} alt="" />
       <div className="title">
         <h1 className="title__title">Portfolio</h1>
         <p className="title__name">Eiji Yoshida<br />2020</p>
@@ -32,7 +32,7 @@ export default ({ data }) => (
       <h2 className="profile__head">Profile</h2>
       <div className="profile__inner">
         <div className="profile__face_wrap">
-          <img src="/images/face.png" srcSet="/images/face@2x.png 2x" className="profile__face" />
+          <Img className="profile__face" fluid={data.face.childImageSharp.fluid} alt="" />
           <h3 className="profile__name">吉田　栄治<small>Eiji Yoshida</small></h3>
         </div>
         <dl className="profile__history">
@@ -229,9 +229,58 @@ export default ({ data }) => (
 
 export const query = graphql`
   query {
-    file(relativePath: {eq: "top.jpg"}) {
+    top: file(relativePath: {eq: "top.jpg"}) {
       childImageSharp {
         fluid(maxWidth: 1600) {
+          ...GatsbyImageSharpFluid_withWebp_tracedSVG
+        }
+      }
+    }
+    face: file(relativePath: {eq: "face.png"}) {
+      childImageSharp {
+        fluid(maxWidth: 80) {
+          ...GatsbyImageSharpFluid_withWebp_tracedSVG
+        }
+      }
+    }
+    ci: file(relativePath: {eq: "ci.png"}) {
+      childImageSharp {
+        fluid(maxWidth: 283) {
+          ...GatsbyImageSharpFluid_withWebp_tracedSVG
+        }
+      }
+    }
+    lacotto: file(relativePath: {eq: "lacotto.png"}) {
+      childImageSharp {
+        fluid(maxWidth: 283) {
+          ...GatsbyImageSharpFluid_withWebp_tracedSVG
+        }
+      }
+    }
+    museco_pc: file(relativePath: {eq: "museco_pc.png"}) {
+      childImageSharp {
+        fluid(maxWidth: 283) {
+          ...GatsbyImageSharpFluid_withWebp_tracedSVG
+        }
+      }
+    }
+    museco_sp: file(relativePath: {eq: "museco_sp.png"}) {
+      childImageSharp {
+        fluid(maxWidth: 194) {
+          ...GatsbyImageSharpFluid_withWebp_tracedSVG
+        }
+      }
+    }
+    myuu: file(relativePath: {eq: "myuu.png"}) {
+      childImageSharp {
+        fluid(maxWidth: 121) {
+          ...GatsbyImageSharpFluid_withWebp_tracedSVG
+        }
+      }
+    }
+    visits: file(relativePath: {eq: "visits.png"}) {
+      childImageSharp {
+        fluid(maxWidth: 282) {
           ...GatsbyImageSharpFluid_withWebp_tracedSVG
         }
       }
