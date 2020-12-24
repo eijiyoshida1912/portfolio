@@ -1,6 +1,10 @@
 import React from "react"
 import { graphql } from "gatsby"
 import Img from "gatsby-image"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faAngleDown } from "@fortawesome/free-solid-svg-icons"
+
+import Footer from "../components/footer"
 
 export default ({ data }) => (
   <div>
@@ -9,23 +13,11 @@ export default ({ data }) => (
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Eiji Yoshida Portfolio</title>
     <link href="./style.css" rel="stylesheet" />
-    <header className="header">
-      <p className="header__title"><a href="/"><strong>Portfolio</strong> Eiji Yoshida</a></p>
-      <nav className="menu">
-        <div className="menu__bars"><i className="fas fa-bars" id="menu__bars" /></div>
-        <ul className="menu__list" id="menu__list">
-          <li><a href="#profile"><i className="fas fa-user" />Profile</a></li>
-          <li><a href="#works"><i className="fas fa-desktop" />Works</a></li>
-          <li><a href="#contact"><i className="fas fa-envelope" />Contact</a></li>
-        </ul>
-      </nav>
-    </header>
     <section className="top">
       <Img className="top_image" fluid={data.top.childImageSharp.fluid} alt="" />
       <div className="title">
         <h1 className="title__title">Portfolio</h1>
         <p className="title__name">Eiji Yoshida<br />2020</p>
-        <i className="fas fa-chevron-down title__down" />
       </div>
     </section>
     <section className="profile" id="profile">
@@ -66,6 +58,7 @@ export default ({ data }) => (
             <li>Ruby on Rails</li>
             <li>Sass</li>
             <li>Haml</li>
+            <li>Gatsby.js</li>
           </ul>
           <p className="profile__text">Webデザイン、アプリデザインを本業に、フロントエンドもやってます。</p>
           <h4 className="profile__hobby_head">趣味、特技</h4>
@@ -104,6 +97,7 @@ export default ({ data }) => (
               <li><a href="http://eijiyoshida1912.itigo.jp/?p=84">2020.03.11 転職サイト・HTML新着求人メルマガ改修</a></li>
             </ul>
           </div>
+          <input type="checkbox" id="ci_text" className="accordion_check" />
           <div className="detail_text">
             <h4 className="detail_text__head">好景気の転職業界で生き残る為のデザイン。</h4>
             <p>メインサイトである「CAREER INDEX」は、「如何にして20〜30代のユーザーを引き込むか。」が命題のプロジェクトでした。最大の流入元であるハローワークからのユーザーは高年齢層がメインなので、どうしても単価の高い、若いユーザーが取りにくい環境でした。よりわかりやすく、かつ若いユーザーに刺さりやすいUIにするかを考えながらABテストで日々の改善を行い、徐々にですが獲得していけるようなサイトになりました。<br />「CAREER INDEX」も他のプロジェクトも社内にデザイナーは一人の為、企画〜デザイン〜コーディング〜RailsのView組み込みまで1人で作業していました。<br />キャリアインデックス社では複数のサイトを横断して作業していたので、様々なジャンルの求人サイトに参加できるという密度の濃い時間でもありました。<br />現在は未経験デザイナーが1名入社し、デザインの基礎やコーディングなどを日々教育しながら業務しています。</p>
@@ -130,7 +124,8 @@ export default ({ data }) => (
             </ul>
             <p>etc.</p>
           </div>
-          <p className="to_detail_button" id="to_detail_button--ci">キャリアインデックス株式会社での<br />詳細を見る <i className="fas fa-angle-down" /></p>
+          <label className="to_detail_button" htmlFor="ci_text">キャリアインデックス株式会社での<br />詳細を見る <FontAwesomeIcon icon={faAngleDown} />
+          </label>
         </li>
         <li>
           <h3 className="works__name">2015.12 - 2017.05<small>ミューズコー株式会社</small></h3>
@@ -148,9 +143,10 @@ export default ({ data }) => (
               </li>
             </ul>
           </div>
+          <input type="checkbox" id="museco_text" className="accordion_check" />
           <div className="detail_text">
-            <h4 className="detail_text__head">女性の心を掴む為の UI 設計、ビジュアルデザイン。</h4>
-            <p>ミューズコーがターゲットとしている20~30代の女性はスマホでのサイト閲覧が多く、ミューズコーに訪問するユーザーの8割がスマホ、さらにその中の8割がiPhoneになります。スマホで商品を閲覧、購入するためにはどのように部品を配置すれば良いのかを日々考えながら改善していく作業でした。<br />この案件で気づかされたのは「ECサイトは商品が買える便利なツールであり、画面サイズに縮小した店舗ではない」ということ。実店舗の店内を飾りつけるように Webサイトやアプリを飾りつけても、商品を買うルールがわからない、買えたかどうかわからない、ボタンが押せるのか押せないのかわからないなどの基本ができていないだけで簡単にユーザーは離れてしまう。なぜなら店から出るには閉じるボタンを押すだけだから。UI/UXという言葉を再考させられる案件でした。<br />良いアプリケーションデザインを作るためにはシステム面も知らなければならないという思いから、サイトのサーバサイド開発 (Laravel)、JavaによるAndroidアプリの開発にも参加。システム面を学んだことで、少なくとも実現不可能なデザインを作成するデザイナーにはならないで済んだかもしれません。</p>
+            <h4 className="detail_text__head">女性の心を掴む為のUI設計、ビジュアルデザイン。</h4>
+            <p>ミューズコーがターゲットとしている20~30代の女性はスマホでのサイト閲覧が多く、ミューズコーに訪問するユーザーの8割がスマホ、さらにその中の8割がiPhoneになります。スマホで商品を閲覧、購入するためにはどのように部品を配置すれば良いのかを日々考えながら改善していく作業でした。<br />この案件で気づかされたのは「ECサイトは商品が買える便利なツールであり、画面サイズに縮小した店舗ではない」ということ。実店舗の店内を飾りつけるようにWebサイトやアプリを飾りつけても、商品を買うルールがわからない、買えたかどうかわからない、ボタンが押せるのか押せないのかわからないなどの基本ができていないだけで簡単にユーザーは離れてしまう。なぜなら店から出るには閉じるボタンを押すだけだから。UI/UXという言葉を再考させられる案件でした。<br />良いアプリケーションデザインを作るためにはシステム面も知らなければならないという思いから、サイトのサーバサイド開発(Laravel)、JavaによるAndroidアプリの開発にも参加。システム面を学んだことで、少なくとも実現不可能なデザインを作成するデザイナーにはならないで済んだかもしれません。</p>
             <h5 className="detail_text__child_head">開発プロジェクト</h5>
             <ul className="detail_text__work_list">
               <li>ファッションECサイト「Muse &amp; Co.」<a href="https://museco.jp" target="_blank">https://museco.jp</a></li>
@@ -176,7 +172,8 @@ export default ({ data }) => (
             </ul>
             <p>etc.</p>
           </div>
-          <p className="to_detail_button" id="to_detail_button--mc">ミューズコー株式会社での<br />詳細を見る <i className="fas fa-angle-down" /></p>
+          <label className="to_detail_button" htmlFor="museco_text">ミューズコー株式会社での<br />詳細を見る <FontAwesomeIcon icon={faAngleDown} />
+          </label>
         </li>
         <li>
           <h3 className="works__name">2013.01 - 2015.12<small>フリーランスでのWebサイト制作活動</small></h3>
@@ -194,9 +191,10 @@ export default ({ data }) => (
               </li>
             </ul>
           </div>
+          <input type="checkbox" id="fl_text" className="accordion_check" />
           <div className="detail_text">
             <h4 className="detail_text__head">受注から2週間で公開の高回転WordPressサイト。</h4>
-            <p>基本的に受注から本番アップロード・完成まで平均 2 週間程。デザインは 3日、HTML/CSS コーディングは 1 ページあたり 2 時間、 残り 1 週間をシステム開発、テストにあてる。期限が短いムチャな 案件はデザインから公開まで 3 日ほど!<br />常に 2~3 人の少人数(場合によって 1 人)なので、システム面はほぼ全て Wordpress。デザインはテーマ等使わずにフルオリジナルで作成しました。後期は Bootstrap も使用し、さらにスピード感ある開発を意識しました。クライアントとの直接交渉や打ち合わせを こなしつつ複数の案件を掛け持ちで運用することも多く、開発・運用するサイトも個人サイト、コーポレートサイト、EC サイト、キュレーションメディアなど幅広く、知見を広めた時期でした。サイトの改善などを連絡が入り次第迅速に行う事がクライアントとの関係を保つ秘訣だという事(つまり、フリーランスは時間に厳しく)をこれらの案件から学びました。</p>
+            <p>基本的に受注から本番アップロード・完成まで平均2週間程。デザインは3日、HTML/CSSコーディングは1ページあたり2時間、残り1週間をシステム開発、テストにあてる。期限が短いムチャな案件はデザインから公開まで3日ほど!<br />常に2~3人の少人数(場合によって1人)なので、システム面はほぼ全てWordpress。デザインはテーマ等使わずにフルオリジナルで作成しました。後期はBootstrapも使用し、さらにスピード感ある開発を意識しました。クライアントとの直接交渉や打ち合わせをこなしつつ複数の案件を掛け持ちで運用することも多く、開発・運用するサイトも個人サイト、コーポレートサイト、ECサイト、キュレーションメディアなど幅広く、知見を広めた時期でした。サイトの改善などを連絡が入り次第迅速に行う事がクライアントとの関係を保つ秘訣だという事(つまり、フリーランスは時間に厳しく)をこれらの案件から学びました。</p>
             <h5 className="detail_text__child_head">開発プロジェクト</h5>
             <p>制作サイト多数</p>
             <h5 className="detail_text__child_head">使用ツール、言語</h5>
@@ -213,7 +211,8 @@ export default ({ data }) => (
             </ul>
             <p>etc.</p>
           </div>
-          <p className="to_detail_button" id="to_detail_button--fl">フリーランスの<br />詳細を見る <i className="fas fa-angle-down" /></p>
+          <label className="to_detail_button" htmlFor="fl_text">フリーランスの<br />詳細を見る <FontAwesomeIcon icon={faAngleDown} />
+          </label>
         </li>
       </ul>
     </section>
@@ -221,9 +220,8 @@ export default ({ data }) => (
        <h2 class="contact__head">Contact</h2>
        <?php echo do_shortcode('[contact-form-7 id="5" title="コンタクトフォーム 1"]'); ?>
        </section> */}
-    <footer>
-      <p className="address">©Eiji Yoshida 2020</p>
-    </footer>
+    <Footer />
+
   </div>
 )
 
