@@ -93,8 +93,8 @@ export default ({ data }) => (
           <div className="works__new">
             <h3 className="works__new_head">CAREER INDEXでのUIデザイン改善記録</h3>
             <ul className="new_list">
-              <li><a href="http://eijiyoshida1912.itigo.jp/?p=9">2020.03.10 転職サイト・CAREER INDEXの登録フォーム改善</a></li>
-              <li><a href="http://eijiyoshida1912.itigo.jp/?p=84">2020.03.11 転職サイト・HTML新着求人メルマガ改修</a></li>
+              <li><a href="/2020-03-10">2020.03.10 転職サイト・CAREER INDEXの登録フォーム改善</a></li>
+              <li><a href="/2020-03-11">2020.03.11 転職サイト・HTML新着求人メルマガ改修</a></li>
             </ul>
           </div>
           <input type="checkbox" id="ci_text" className="accordion_check" />

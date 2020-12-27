@@ -163,7 +163,7 @@ export default ({ data }) => (
           <h3>2.ページ上部のフロー表示を廃止<br />3.エラーメッセージや注意メッセージをラベルの下にした<br />5.性別ラジオボタンを押しやすくした<br />6.パスワード入力をシンプルにした</h3>
           <p>こちらの施策は現在数値測定中です。</p>
           <p>現在のサイトで細かい検証を続け、一定の結果が取れた時期にこのデザインと入れ替える予定になっています。</p></div>
-        <p className="single_content__back"><a href="http://eijiyoshida1912.itigo.jp">&lt; ホームに戻る</a></p>
+        <p className="single_content__back"><a href="/">&lt; ホームに戻る</a></p>
       </div>
     </section>
   </Layout>
